@@ -1,0 +1,160 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+/* cv.css-ből */
+
+body {
+    background-color: snow;
+}
+
+div.info p::first-letter {
+    font-size: 2rem;
+    font-style: italic;
+    color: palevioletred;
+}
+
+h1 {
+    text-align: center;
+    color: cadetblue;
+    font-size: 3rem;
+    letter-spacing: 12px;
+    border-top: 1px solid cadetblue;
+    border-bottom: 1px solid cadetblue;
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+}
+
+h2 {
+    text-transform: uppercase;
+    color: turquoise;
+    letter-spacing: 0.2rem;
+}
+
+.quote {
+    margin-left: 10px;
+    padding-left: 15px;
+    color: gray;
+    border-left: 5px solid #454545;
+}
+
+#kep {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#nav a {
+    font-size: 1.1rem;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: deepskyblue;
+}
+
+
+#nav a:visited {
+    font-style: normal;
+    color: deepskyblue;
+}
+
+#nav a:hover {
+    background-color: magenta;
+    color: ghostwhite;
+}
+
+#nav #back:hover {
+    background-color: coral;
+}
+
+div.info p:nth-child(5) {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-style: italic;
+    color: crimson;
+}
+
+img {
+    border: 3px solid black;
+}
+
+div.info {
+    text-align: justify;
+    margin: 15px 0px;
+    padding: 20px;
+    border: 1px solid #1188FA;
+    border-radius: 10px;
+    
+    width: 50%;
+   
+}
+
+/* cv2.css egyedi */
+
+#main {
+    width: 92%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid aqua;
+}
+
+#footer {
+    width: 92%;
+    margin: auto;
+    background-color: beige;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#footer .social {
+    width: 100%;
+    height: 50px;
+}
+
+#footer .social a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    padding-top: 10px;
+}
+
+#footer .social-facebook {
+    background-color: navy;
+}
+
+#footer .social-twitter {
+    background-color: deepskyblue;
+}
+
+
+#footer .social-instagram {
+    background-color: purple;
+}
+
+
+@media screen and (max-width: 800px) {
+    #nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #main div.info {
+        width: 100%;
+    }
+
+    #footer {
+        flex-direction: column;
+    }
+}
