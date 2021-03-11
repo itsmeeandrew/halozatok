@@ -100,4 +100,8 @@ div {
     #középső {
         flex-direction: column;
     }
+
+    #kérdés {
+        font-size: 1rem;
+    }
 }
