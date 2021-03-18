@@ -1,0 +1,18 @@
+﻿.inline-div {
+    display: inline-block;
+}
+
+.sor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.elem {
+    padding: 20px 20px;
+}
+
+#pascal {
+    width: 80%;
+    margin: auto;
+}
