@@ -40,10 +40,6 @@ div {
     flex-grow: 1;
 }
 
-#válaszok {
-
-}
-
 #válaszok div {
     width: 100%;
     text-align: center;
@@ -79,21 +75,17 @@ div {
     border-radius: 10px;
 }
 
-.kerdes {
-
-}
-
 .kattintható:hover {
     cursor: pointer;
-    background-color: aquamarine;
+    background-color: lightblue;
 }
 
-.jó {
-    background-color: red;
-}
-
-.rossz {
+.jó-válasz {
     background-color: lawngreen;
+}
+
+.rossz-válasz {
+    background-color: red;
 }
 
 @media screen and (max-width: 800px) {
