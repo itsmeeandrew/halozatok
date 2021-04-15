@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="eredmeny"></div>
+
+    <script>
+        fetch('/questions/all')
+            .then(response => response.json())
+            .then(data => kiiratás(data)
+
+            );
+
+        function kiiratás(lista) {
+            console.log(lista)
+            for (var i = 0; i < lista.length; i++) {
+
+                let container = document.createElement("div");
+                let kérdésDiv = document.createElement("div");
+                let válaszokDiv = document.createElement("div");
+
+                let kérdés = `${lista[i].questionId}. ${lista[i].questionText}`;
+                let válasz1 = lista[i].answer1;
+                let válasz2 = lista[i].answer2;
+                let válasz3 = lista[i].answer3;
+                let válaszok = `${válasz1} - ${válasz2} - ${válasz3}`;
+
+                kérdésDiv.innerText = kérdés;
+                válaszokDiv.innerText = válaszok;
+
+                container.appendChild(kérdésDiv);
+                container.appendChild(válaszokDiv);
+
+                document.getElementById("eredmeny").appendChild(container);
+            }
+        }
+    </script>
+</body>
+</html>
