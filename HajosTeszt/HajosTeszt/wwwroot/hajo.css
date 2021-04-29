@@ -88,6 +88,10 @@ div {
     background-color: red;
 }
 
+.megválaszolt {
+    pointer-events: none;
+}
+
 @media screen and (max-width: 800px) {
     #középső {
         flex-direction: column;
