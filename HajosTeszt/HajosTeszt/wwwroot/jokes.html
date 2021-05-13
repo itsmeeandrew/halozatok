@@ -5,39 +5,41 @@
     <title></title>
 </head>
 <body>
-    <p id="status">státusz</p>
-    <form>
-        <div>
-            <input id="jokeText" type="text" placeholder="Csak PC vicc" />
-        </div>
-        <button id="addButton">Új vicc felvétele</button>
-        <button id="getAllJokesBtn">Összes vicc</button>
-        <div id="jokeList"></div>
-    </form>
+    <p id="status"></p>
+    <div>
+        <input id="jokeText" type="text" placeholder="Csak PC vicc" />
+    </div>
+    <button id="addButton">Új vicc felvétele</button>
+    <button id="getAllJokesBtn">Összes vicc</button>
+    <div id="jokeList"></div>
+    
     <script>
+        const status = document.getElementById("status");
+
         document.getElementById("addButton").addEventListener("click", () => {
             let data = {
                 text: document.getElementById("jokeText").value
             }
 
             fetch("api/jokes",
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            }).then(x => {
-                if (x.ok) {
-                    console.log("Siker");
-                }
-                else {
-                    console.log("Kudarc");
-                }
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }).then(x => {
+                    if (x.ok) {
+                        status.innerText = "Siker!";
+                    }
+                    else {
+                        status.innerText = "Valami nem sikerült :(";
+                    }
+                })
+                .catch((error) => {
+                    status.innerText = "Valami nem sikerült :(";
+                    console.error('Error:', error);
+                });
 
         });
 
@@ -45,14 +47,13 @@
             fetch("api/jokes")
                 .then(res => {
                     console.log(res)
-                    return res.JSON()
+                    return res.json()
                 })
                 .then(data => {
                     data.forEach(joke => {
                         let p = document.createElement("p");
                         p.textContent = joke.jokeText;
                         document.getElementById("jokeList").appendChild(p);
-
                     });
                 })
         });
